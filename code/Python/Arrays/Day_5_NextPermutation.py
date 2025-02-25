@@ -3,14 +3,14 @@ def nextPermutation(arr):
     
     # Step 1: Find the largest index k such that arr[k] < arr[k + 1]
     k = -1
-    for i in range(n - 2, -1, -1):
+    for i in range(n - 2, 0, -1):
         if arr[i] < arr[i + 1]:
             k = i
             break
     
     # If no such index exists, the array is the largest permutation
     if k == -1:
-        arr.sort()  # Sort the array to get the lowest permutation
+        arr.reverse()  #reverse the array to get the lowest permutation
         return arr
     
     # Step 2: Find the largest index l such that arr[k] < arr[l]
